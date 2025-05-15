@@ -1,4 +1,4 @@
-# # Creating a tuple
+# Creating a tuple
 # my_tuple = (1, 2, 3, 4, 5)
 # print("Original Tuple:", my_tuple)
 
@@ -34,8 +34,3 @@
 # # Tuples with different data types
 # mixed_tuple = (1, "Hello", 3.14, True)
 # print("Mixed Tuple:", mixed_tuple)
-
-
-empty_tuple = ()
-print(empty_tuple)       # Output: ()
-print(type(empty_tuple)) # Output: <class 'tuple'>
