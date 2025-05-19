@@ -1,0 +1,136 @@
+Introduction to Django:
+Django is a high-level Python web framework that allows developers to build secure, scalable, and maintainable websites quickly.
+It follows the MVT (Model-View-Template) architecture, which is similar to MVC.
+
+✅ Django was created in 2005 by Adrian Holovaty and Simon Willison.
+
+⭐ Key Features of Django:
+Feature	Description
+🔄 MVT Architecture	Django uses MVT (Model-View-Template), which separates data, business logic, and UI.
+⚙️ Built-in Admin Panel	Django automatically creates an admin interface to manage your data without extra coding.
+🔐 Security	Django handles security issues like SQL injection, CSRF, XSS, etc., by default.
+📦 ORM (Object-Relational Mapping)	Allows easy database operations using Python classes instead of SQL.
+🧩 Scalability	Used by big websites like Instagram — can handle millions of users.
+🔧 URL Routing	Clean and dynamic URLs can be created easily.
+🧪 Testing Support	Django comes with built-in tools for testing your code.
+📚 Well-documented	Django has extensive official documentation, perfect for beginners.
+🌍 Internationalization	Supports multiple languages and regional formatting.
+🔁 Reusable Apps	You can create modular apps that can be reused across projects.
+
+👨‍💻 Example Websites Using Django:
+Instagram
+Pinterest
+Mozilla
+Disqus
+
+MVT Architecture in Django
+Django follows the MVT pattern, which stands for:
+
+✅ Model
+✅ View
+✅ Template
+
+It is similar to MVC (Model-View-Controller), but with a slight difference in naming.
+
+🔸 1. Model
+The Model represents the database structure.
+It defines how data is stored using Python classes.
+A Model is a Python class that represents a database table.
+It defines the structure of your data — like columns in a table.
+Django’s ORM (Object Relational Mapping) automatically translates this Python class into database commands.
+You don’t write SQL directly; instead, you work with Python classes and objects.
+Django uses ORM (Object Relational Mapping) to interact with the database.
+
+🔸 2. View
+The View contains the logic of your application.
+It fetches data from the model and sends it to the template.
+It handles HTTP requests and responses.
+A View is a Python function or class that handles a web request and returns a web response.
+It contains the logic of your application — like fetching data from the database, processing it, and deciding what to show to the user.
+Views connect Models (data) and Templates 
+
+🔸 3. Template
+The Template is the HTML file shown to the user.
+It displays data that comes from the View using Django’s template language.
+A Template is an HTML file used to define the frontend (UI) of your Django web application.
+It displays data sent by the view and helps generate the final HTML page shown to users.
+Django uses its own Template Language (DTL) — it supports variables, loops, conditions, etc.
+
+What is a URL in Django?
+A URL in Django is a path that maps a web address (like /home/, /about/, /students/) to a view function or class.
+It tells Django what to do when a user visits a specific URL in the browser.
+
+What is a Route?
+A route is simply a URL pattern that tells Django:
+“When the user visits this path, call this view.”
+
+🛠️ How to Create URLs in Django
+🔹 Step 1: In your app’s views.py, create a view
+🔹 Step 2: In your app’s urls.py, add a URL pattern
+🔹 Step 3: Link the app URLs to the main project
+
+📦 Project & App Setup
+Create a new project
+django-admin startproject myproject
+
+Create a new app
+python manage.py startapp myapp
+
+🚀 Development Server
+Run local dev server
+python manage.py runserver
+
+• Default port is 8000; to change:
+python manage.py runserver 8080
+
+🗄️ Database Migrations
+Create new migration files (after you edit models.py)
+python manage.py makemigrations
+
+Apply migrations to the database
+python manage.py migrate
+
+🔐 Admin & Users
+Create a super-user
+python manage.py createsuperuser
+
+Change a user’s password
+python manage.py changepassword <username>
+
+🐚 Interactive Shell
+Open Django shell
+python manage.py shell
+Open with IPython (if installed)
+
+python manage.py shell_plus
+
+⚙️ Static & Media Files
+Collect static files (for production)
+python manage.py collectstatic
+
+Clear sessions (delete expired session data)
+python manage.py clearsessions
+🧪 Testing
+Run test suite
+python manage.py test
+
+📜 Database Inspection
+Show SQL for a migration
+python manage.py sqlmigrate <app_label> <migration_number>
+
+Show applied migrations
+python manage.py showmigrations
+
+💾 Data Import/Export
+Export data to JSON
+python manage.py dumpdata <app_label.ModelName> > data.json
+
+Load data from JSON
+python manage.py loaddata data.json
+
+❓ Help & Introspection
+List all available commands
+
+python manage.py help
+Get help on a specific command
+python manage.py help migrate
