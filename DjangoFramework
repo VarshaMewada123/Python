@@ -134,3 +134,57 @@ List all available commands
 python manage.py help
 Get help on a specific command
 python manage.py help migrate
+
+create urls and views in Django
+create views.py 
+1. Using an HTML Template (Most Common Way)
+You create an HTML file and pass data to it using the render() function.
+It’s good for dynamic websites and when you want to design the layout.
+
+return render(request, 'template.html', {'name': 'Varsha'})
+
+2. Using HttpResponse (Plain Text or HTML)
+You return a simple response directly from the view without a template.
+Good for quick testing or simple output.
+
+from django.http import HttpResponse
+
+def simple_view(request):
+    return HttpResponse("Hello from Django!")
+
+You can also return basic HTML:
+
+return HttpResponse("<h1>Hello, <b>Varsha</b></h1>")
+3. Using JsonResponse (For APIs or JavaScript Frontend)
+If you want to send data in JSON format (used in APIs or frontend frameworks like React).
+
+from django.http import JsonResponse
+
+def data_api(request):
+    return JsonResponse({'name': 'Varsha', 'age': 22})
+4. Using FileResponse (To show or download files)
+If you want to send PDF, text files, or images.
+
+
+from django.http import FileResponse
+
+def file_view(request):
+    return FileResponse(open('myfile.pdf', 'rb'), content_type='application/pdf')
+✅ 5. Streaming Response (For large data / live updates)
+Used when you want to stream data bit by bit.
+
+from django.http import StreamingHttpResponse
+
+def stream_view(request):
+    def stream():
+        yield 'Part 1\n'
+        yield 'Part 2\n'
+    return StreamingHttpResponse(stream())
+setUp urls in urls.py
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Render a HTML templets as response
